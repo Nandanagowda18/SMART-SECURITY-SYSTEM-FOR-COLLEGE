@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action="/enter_mobile" method="post">
+ <div>
+ <label>Enter Mobile Number</label></br></br>
+ <input type="text" name="number" placeholder="91 ***"/>
+ <button type="submit">Get OTP</button>
+ </div>
+</form>
+{% endblock content %}

@@ -1,0 +1,29 @@
+p{% extends "layout.html" %}
+{% block content %}
+ <form action="/user_register" method="post">
+ <div class="container">
+ <label for="Student_name"><b>Student_name</b></label>
+ <input type="text" placeholder="Enter Student Name" name= "Student_name" 
+onkeypress="return /[a-z]/i.test(event.key)" ><br />
+ <label for="email"><b>Email</b></label>
+ <input type="email" placeholder="Enter Email" name="email" ><br />
+ <label for="psw"><b>Password</b></label>
+ <input type="password" placeholder="Enter Password" name="psw" >
+<!-- <label for="gender"><b>gender</b></label>-->
+<!-- <input type="text" placeholder="" name="gender" />-->
+ <label for="Register_No"><b>Register_No</b></label>
+ <input type="text" placeholder="Enter your Register_No" name="Register_No" 
+class="Register_No" />
+ <label for="address"><b> address</b></label>
+ <input type="text" placeholder="address" name="address" class="address" />
+ <label for="Mobile_No"><b> Mobile_No</b></label>
+ <input type="text" placeholder="Mobile_No" name="Mobile_No" class="Mobile_No" 
+maxlength="10" />
+ <label for="Branch"><b> Barnch</b></label>
+ <input type="text" placeholder="Enter Your Branch" name="Branch" class="Branch" />
+ <label for="year"><b> year</b></label>
+ <input type="text" placeholder="Enter your year" name="year" class="year" />
+ <button type="submit">Submit</button>
+ </div>
+ </form>
+{% endblock content %}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+ <meta charset="UTF-8">
+ <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+ <title>Title</title>
+</head>
+<body background="static/1.jfif">
+ <div class="topnav">
+ <form action="/logoutd" method="POST">
+ <a><button type="submit" class="btn">Sign out</button></a>
+<!-- <a class="active" href="/Verification"><button type="submit" 
+class="btn">Verification</button>></a>-->
+ </form>
+ <a href="/enter_mobile"><button class="active">verification</button></a>
+<!-- <input type="hidden" name="email" value="{{a}}">-->
+ </div>
+ <center><div>{% with messages = get_flashed_messages(with_categories=true) %}
+ {% if messages %}
+ {% for category, message in messages %}
+ <div class="alert alert-{{ category }}">
+ {{ message }}
+ </div>
+ {% endfor %}
+ {% endif %}
+ {% endwith %}</div></center>
+<h>Student_name : {{ b[0][1] }}</h><br>
+<h>Email ID : {{ b[0][2] }}</h><br>
+<!-- <h>Password : {{ b[0][3] }}</h><br> -->
+<h>Mobile No : {{ b[0][4] }}</h><br>
+<h>Register_No : {{ b[0][5] }}</h><br>
+<h>Address : {{ b[0][7] }}</h><br>
+ <h>Branch : {{ b[0][6] }}</h><br>
+ <h>year : {{ b[0][8] }}</h><br>
+<form action="/user_account" method="POST">
+<!-- <a><button type="submit" class="btn">Edit Details</button></a>-->
+ <input type="hidden" name="email" value="{{a}}">
+ </form>
+</body>
+<style>
+body {
+ background-image: url("/static/1.jfif");
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-size: 1400px;
+ height: 100px;
+ max-width: 100%;
+ overflow: hidden;
+}</style>
+</html>
