@@ -1,0 +1,33 @@
+pipeline{
+   agent {
+       docker {
+          image 'node:14'
+          }
+        }
+       stages{
+         stage('Clone repository'){
+         steps{
+           git branch:'main';
+           url:'https://github.com/Nandanagowda18/SMART-SECURITY-SYSTEM-FOR-COLLEGE/new/main'
+           }
+          }
+          stage('Install dependencies'){
+          steps{
+          sh 'npm install'
+          }
+          }
+          stage ('Build Apllications')
+          {
+          steps{
+          sh ' npm run build'
+          }
+          }
+          stage ('test application')
+          {
+          steps{
+             sh 'npm test'
+             }
+            }
+            
+           }
+           }
